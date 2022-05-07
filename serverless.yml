@@ -1,4 +1,4 @@
-service: question-bot
+service: slack-bot-template
 
 provider:
   name: aws
@@ -16,11 +16,11 @@ custom:
     dev:
       bot:
         handler: bot/build/develop/main
-        path: question
+        path: example
     prod:
       bot:
         handler: bot/build/production/main
-        path: question
+        path: example
   otherfile:
     environment:
       dev: ${file(./conf/dev/dev.yml)}
@@ -31,7 +31,7 @@ custom:
 functions:
   bot:
     handler: ${self:custom.environment.${opt:stage, self:custom.defaultStage}.bot.handler}
-    description: "Deploy Question Bot"
+    description: "Deploy Slack Bot"
     timeout: 30
     events:
       - http:
