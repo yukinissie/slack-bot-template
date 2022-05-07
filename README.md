@@ -1,14 +1,14 @@
-# Slack Reaction Bot
+# Slack Bot Template
 
-Go と Lambda で Slack にリアクション弾幕を送るための Bot
+Go製のSlackBotテンプレート
 
 ## 開発方法
 
 ### 1. インストール
 
 ```
-git clone git@github.com:yukinissie/slack-reaction-bot.git
-cd slack-reaction-bot/bot
+git clone git@github.com:yukinissie/slack-bot-template.git
+cd slack-bot-template/bot
 make init
 cd ..
 ```
@@ -44,7 +44,7 @@ ngrok http 3000
 
 表示された TLS 化済みの URL を SlackApp に登録します。
 
-例：`https://022d-131-129-4-95.ngrok.io`
+例：`https://022d-131-129-4-95.ngrok.io/dev/example`
 
 Go のコードを書き換えた場合は 3 を繰り返し実行します。
 
