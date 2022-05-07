@@ -68,6 +68,6 @@ make dev_deploy
 
 ### GitHub Actions でデプロイ（prod 用）
 
-GitHub リポジトリの`Settings>Secrets`に`SLACK_TOKEN`、`AWS_ACCESS_KEY_ID`、`AWS_SECRET_ACCESS_KEY`、`SLACK_WEBHOOK`キーを登録します。
+GitHub リポジトリの`Settings>Secrets`に`SLACK_BOT_TOKEN`、`AWS_ACCESS_KEY_ID`、`AWS_SECRET_ACCESS_KEY`、`SLACK_WEBHOOK`キーを登録します。
 
 あとは`main`ブランチにプッシュすることでデプロイされます。
