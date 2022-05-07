@@ -1,0 +1,4 @@
+build
+node_modules
+.serverless
+conf/dev/dev.yml

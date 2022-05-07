@@ -1,0 +1,41 @@
+service: question-bot
+
+provider:
+  name: aws
+  region: ap-northeast-1
+  timeout: 120
+  runtime: go1.x
+  stage: ${opt:stage, self:custom.defaultStage}
+
+plugins:
+  - serverless-offline
+
+custom:
+  defaultStage: dev
+  environment:
+    dev:
+      bot:
+        handler: bot/build/develop/main
+        path: question
+    prod:
+      bot:
+        handler: bot/build/production/main
+        path: question
+  otherfile:
+    environment:
+      dev: ${file(./conf/dev/dev.yml)}
+      prod: ${file(./conf/prod/prod.yml)}
+  serverless-offline:
+    useDocker: true
+
+functions:
+  bot:
+    handler: ${self:custom.environment.${opt:stage, self:custom.defaultStage}.bot.handler}
+    description: "Deploy Question Bot"
+    timeout: 30
+    events:
+      - http:
+          path: ${self:custom.environment.${opt:stage, self:custom.defaultStage}.bot.path}
+          method: post
+    environment:
+      SLACK_BOT_TOKEN: ${self:custom.otherfile.environment.${opt:stage, self:custom.defaultStage}.slackBotToken}

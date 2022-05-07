@@ -1,0 +1,19 @@
+{
+  "name": "slack-reaction-bot",
+  "description": "GoとLambdaでSlackにリアクション弾幕を送るためのBot",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yukinissie/slack-reaction-bot.git"
+  },
+  "author": "yukinissie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yukinissie/slack-reaction-bot/issues"
+  },
+  "homepage": "https://github.com/yukinissie/slack-reaction-bot#readme",
+  "devDependencies": {
+    "serverless": "3.7.1",
+    "serverless-offline": "8.5.0"
+  }
+}
