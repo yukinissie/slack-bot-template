@@ -12,6 +12,6 @@ local_run: init dev_build
 	cd .. && npx sls offline
 
 dev_deploy: init dev_build
-	cd .. && npx sls deploy function --function bot --verbose
+	cd .. && npx sls deploy --stage dev --verbose
 
 # productionへはGitHub Actionsで
