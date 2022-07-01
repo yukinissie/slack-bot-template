@@ -1,6 +1,6 @@
 # Slack Bot Template
 
-Go製のSlackBotテンプレート
+Go 製の SlackBot テンプレート
 
 ## 開発方法
 
@@ -21,9 +21,17 @@ cp conf/dev/dev.yml.example conf/dev/dev.yml
 
 dev.yml に SlackApp のボットトークンを設定する。
 
+※SlackApp は[ここ](https://api.slack.com/apps/)で作る。
+
+OAuth & Permissions > Scopes > Bot Token Scopes には channels:history と chat:write を追加する。
+
+OAuth & Permissions の Bot User OAuth Token を slackToken に追記する。
+
 ```
 slackToken: 'xoxb-...'
 ```
+
+Event Subscriptions > Subscrive to be bot events に message.channels を追加する。
 
 ### 3. ローカルサーバーを起動
 
@@ -42,7 +50,7 @@ ngrok を使って一時的にローカルサーバーを公開します。こ�
 ngrok http 3000
 ```
 
-表示された TLS 化済みの URL を SlackApp に登録します。
+表示された TLS 化済みの URL を SlackApp の Event Subscriptions > Request URL に登録します。
 
 例：`https://022d-131-129-4-95.ngrok.io/dev/example`
 
