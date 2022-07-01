@@ -24,14 +24,18 @@ dev.yml に SlackApp のボットトークンを設定する。
 ※SlackApp は[ここ](https://api.slack.com/apps/)で作る。
 
 OAuth & Permissions > Scopes > Bot Token Scopes には channels:history と chat:write を追加する。
+<img width="748" alt="スクリーンショット 2022-07-02 7 39 17" src="https://user-images.githubusercontent.com/38881185/176974888-a835d65a-e6dd-4259-b476-5bac606229b9.png">
 
 OAuth & Permissions の Bot User OAuth Token を slackToken に追記する。
+<img width="1058" alt="スクリーンショット 2022-07-02 7 37 29" src="https://user-images.githubusercontent.com/38881185/176974857-207eeee5-0fd9-473c-92c9-53d1e8b8f1f6.png">
+
 
 ```
 slackToken: 'xoxb-...'
 ```
 
 Event Subscriptions > Subscrive to be bot events に message.channels を追加する。
+<img width="668" alt="スクリーンショット 2022-07-02 7 00 00" src="https://user-images.githubusercontent.com/38881185/176974738-d22cee59-161b-4860-8572-752438a7e5e8.png">
 
 ### 3. ローカルサーバーを起動
 
@@ -51,6 +55,7 @@ ngrok http 3000
 ```
 
 表示された TLS 化済みの URL を SlackApp の Event Subscriptions > Request URL に登録します。
+<img width="734" alt="スクリーンショット 2022-07-02 7 40 03" src="https://user-images.githubusercontent.com/38881185/176974946-febdc829-7ea7-4041-8073-ba02fcbd24a7.png">
 
 例：`https://022d-131-129-4-95.ngrok.io/dev/example`
 
